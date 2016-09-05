@@ -1,0 +1,24 @@
+<ion-view view-title="行動問卷" >
+    <ion-nav-bar class="bar bar-header bar-balanced">
+    </ion-nav-bar>
+    <ion-content class="page-back">
+        <div class="Quest-body">
+			{{end_content}}
+            <!-- {{selected}} -->
+			{{Questionnaire_List_question1}}<br>
+			<ion-checkbox ng-repeat="name in Questionnaire_List_option_M" 
+						  ng-model="isChecked"
+						  ng-change="checkedOrNot(name, isChecked, $index)">
+				{{name}}
+			</ion-checkbox>
+			<ion-radio ng-repeat="item in Questionnaire_List_option_S"
+					   ng-click="selectedOrNot(item)">
+				{{item}}
+			</ion-radio>
+			<!-- {{Questionnaire_List_count}}|{{ansSunmary_test}} -->
+			<button class="button button-block button-positive" ng-click="nextQ()" display="none">
+				{{state}}
+			</button>
+        </div>
+    </ion-content>
+</ion-view>

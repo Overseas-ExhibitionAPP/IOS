@@ -1,0 +1,306 @@
+/* Empty. Add your own CSS if you like */
+.page-back {
+    background: url('../img/background.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.item-icon-left ion-spinner {
+  float: left;
+  margin-left: -3.2em;
+  margin-right: 1em;
+  margin-top: -0.2em;
+ }
+
+.spinner svg {
+  width: 28px;
+  height: 28px;
+  stroke: #999;
+  fill: #999;
+}
+/*攤位圖 CSS Setting (Stall.html)*/
+.layout-area {
+    width: auto;
+    height: 320px;
+}
+.layout-img {
+    width: 900px;
+    height: 1000px;
+}
+/*我的最愛 CSS Setting (News.html)*/
+.favorite-item {
+    background-color: #CEFFCE;
+    vertical-align:middle;
+}
+.favorite-title {
+    height:50px;
+}
+.favorite-layout {
+    font-size: 80%;
+    margin-left: 50px;
+}
+/*最新消息 CSS Setting (News.html)*/
+.news-alert .popup {
+    border: 5px solid red;
+    width: auto;
+}
+.news-alert .popup-head{
+    background-color: #00BB00;
+}
+.news-alert .popup-body{
+    height: 500px;
+}
+/* 交通資訊 CSS Setting(Traffic.html)*/
+.scroll {
+    height: 100%;
+}
+.area-item {
+    text-align: Center; 
+    margin-right: 5px;
+    width: 30%;
+    height: 50%;
+    font-size: 80%;
+}
+.map-body {
+    margin-left:0px;
+    width : 100% auto;
+    height: 400px;
+}
+
+.map-body .map-content{
+    width: 100%;
+    height: 100%;
+}
+
+/*Quest layout Setting(Q_show.html)*/
+.Quest-body {
+	padding:10px;
+}
+.Quest-option{
+	text-align:right;
+}
+/*Lobby layout Setting(index.html)*/
+div.lobby-row {
+    margin-left: 0 auto !important;
+    margin-right: 0 auto !important;
+    margin-top: 0 auto !important;
+    margin-bottom: 20px  !important;
+    
+}
+.lobby-col {
+    text-align: Center;
+    
+}
+.lobby-item-img  {
+    margin-bottom: 0px;
+}
+.lobby-item-text {
+    height: 100% auto;
+    margin-top: -5px;
+}
+.item-href {
+    text-decoration:none;
+}
+.item-icon img{
+    width: auto;
+    height: 65px;
+    margin: 0 auto;
+}
+.item-description {
+    font-size: 100%;
+}
+/*參展學校 CSS Setting(search_result.html)*/
+.school-description {
+    padding-left: 0px;
+}
+.school-logo {
+    width:100%;
+    height:auto;
+}
+.item-body {
+    padding-top:0px;
+}
+.depart-info {
+    margin-left:20px;
+    border-width:2px; 
+    border-style:dashed
+}
+.char-title {
+    color:red;
+}
+/*大學巡禮 CSS Setting(Theme_event.html)*/
+.theme-title {
+    font-size: 120%; 
+    color: red; 
+    font-weight: 900;
+}
+.theme-description {
+    border-width:1px; 
+    border-style:dashed;
+    margin-bottom: 10px
+}
+.stickerbook {
+    border-width:2px; 
+    border-style:solid;
+}
+.sticker-item {
+    padding: 0;
+	width: 53px;
+	height: 53px;
+	border-width: 1px; 
+    border-style:dashed;
+}
+.button-area{
+    text-align: Center;
+    padding-left:25px;
+}
+.button-item{
+    width:50%;
+    text-align: Center;
+}
+/*school.html*/
+.school-btn {
+    text-align: Center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-width:3px;
+    border-top-style:dotted;
+    border-bottom-style:dotted;
+}
+/*schname.html*/
+.schname-Search {
+    text-align: Center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/*news.html*/
+div.table-title {
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    padding:5px;
+    width: 100%;
+}
+
+.table-title h3 {
+   //color: #fafafa;
+   font-size: 30px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "Roboto", helvetica, arial, sans-serif;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+   text-transform:uppercase;
+}
+.table-fill {
+    background: white;
+    border-radius:3px;
+    border-collapse: collapse;
+    margin: auto;
+    max-width: 600px;
+    padding:5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+}
+th {
+    color:#D5DDE5;
+    background: #1b1e24;
+    border-bottom:4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    font-size:20px;
+    font-weight: 100;
+    padding:  15px 5px 15px 5px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+}
+th.news-date {
+    width:30%;
+}
+th.news-th-title {
+    width:70%;
+}
+th:first-child {
+    border-top-left-radius:1px;
+}
+ 
+th:last-child {
+    border-top-right-radius:1px;
+    border-right:none;
+}
+  
+tr {
+    border-top: 1px solid #C1C3D1;
+    border-bottom: 1px solid #C1C3D1;
+    color:#666B85;
+    font-size:16px;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+tr:first-child {
+    border-top:none;
+}
+tr:last-child {
+    border-bottom:none;
+}
+tr:nth-child(odd) td {
+    background:#EBEBEB;
+}
+td {
+    background:#FFFFFF;
+    padding: 10px;
+    text-align:left;
+    vertical-align:middle;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+}
+td.news-date{
+    font-weight:100;
+    font-size:15px;
+}
+td.news-title{
+    font-weight:100;
+    font-size:18px;
+}
+/*lecturetime.html*/
+/*table的設定，部分引用new.html之css*/
+th.lec-th-date {
+    width: 25%;
+}
+th.lec-th-time {
+    width:25%;
+}
+th.lec-th-unit {
+    width:25%;
+}
+th.lec-th-room{
+    width:25%;
+}
+td.lec-date {
+    width: 5%;
+    text-align:center;
+    font-weight:100;
+    font-size:15px;
+}
+td.lec-time {
+    text-align:center;
+    font-weight:100;
+    font-size:15px;
+}
+td.lec-unit{
+    text-align:center;
+    font-weight:100;
+    font-size:15px;
+}
+td.lec-room{
+    text-align:center;
+    font-weight:100;
+    font-size:15px;
+}
+/*login.html*/
+.btn-login {
+    text-align: Center;
+}

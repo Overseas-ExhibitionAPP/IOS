@@ -1,0 +1,23 @@
+<ion-view view-title="交通資訊" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-back-button> 
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class = "card">
+            <div class="item item-divider">
+                <button ng-repeat="pos in Pos_Set" class="button button-balanced area-item item-text-wrap" ng-click="setPos(pos.name)">{{pos.btn_name}}</button>
+            </div>
+            <div class = "item item-body">
+                {{name}}</br>
+                {{address}}</br>
+                {{time}}
+            </div>
+            <div class="item item-body">
+                <map class="map" data-tap-disabled="true" center="{{position.x_pos}},{{position.y_pos}}" zoom="15" disable-default-u-i="true">
+                  <marker position="{{position.x_pos}},{{position.y_pos}}" visible="true"></marker>
+                </map>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

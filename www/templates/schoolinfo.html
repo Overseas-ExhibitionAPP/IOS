@@ -1,0 +1,36 @@
+<ion-view view-title="學校介紹" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-buttons side="left">
+        <button class="button-clear button icon ion-chevron-left" ng-click="backtoLobby()">
+        </button>
+        </ion-nav-buttons>
+        <!-- 這是返回鍵，直接插入即可 -->
+        <ion-nav-buttons side=" right">
+            <img style="height:30px; width: auto;" ng-src="img/btn-favorite-on.png" ng-click="setFavoriteList()"></img>&nbsp&nbsp
+            <img style="height:30px; width: auto;" ng-src="img/btn-home.png" ng-click="backToindex()"></img>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar">
+                <img class = "col col-95 school-logo" ng-src="{{picture}}" />
+                <a href="{{schoollink}}"><h2>{{chineseName}}<h2></a>
+                <a href="{{schoollink}}"><h3>{{englishName}}<h3></a>
+            </div>
+            <h5>{{StallsError}}<h5>
+            <div class="item item-body">
+                <h2>{{stalltitle}}<h2>
+                <p ng-repeat="stall in Stalls">
+                    教育展名稱:{{stall.exhibName}}<br>
+                    攤位號碼:{{stall.layoutNum}}
+                </p>
+            </div>
+            <div class="item item-body">
+                <p>
+                    {{schoolInfo}}
+                </p>
+            </div>
+        </div>
+    </ion-content>
+    
+</ion-view>

@@ -1,0 +1,30 @@
+<ion-view view-title="攤位地圖" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-back-button>
+		<!-- 這是返回鍵，直接插入即可 -->
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="page-back" scroll="false">
+        <div>
+            <h3>操作說明:</h3>
+            <p>
+                1.請按下欲選擇的地區，即會顯示對應的攤位地圖。</br>
+                2.地圖可用拖拉的方式移動，即可顯示想要的教育展攤位地圖。
+            </p>
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+				<button ng-repeat="Stall in Stall_Set" class="button button-balanced area-item" ng-click="setPic(Stall.name)">{{Stall.btn_name}}</button>
+			</div>
+            
+            <div class="item item-body layout-area">
+            <ion-scroll zooming="true" direction="xy"  style="width: 100%; height: 100%">
+                <div class="layout-img">
+                    <img class="full-image" data-ng-src="{{pic_model}}"/>
+                </div>
+            </ion-scroll>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+

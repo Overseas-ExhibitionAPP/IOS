@@ -1,0 +1,30 @@
+<ion-view view-title="學校介紹" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-buttons side="left">
+        <button class="button-clear button icon ion-chevron-left" ng-click="backtoLobby()">
+        </button>
+        </ion-nav-buttons>
+        <!-- 這是返回鍵，直接插入即可 -->
+        <ion-nav-buttons side=" right">
+            <img style="height:30px; width: auto;" ng-src="img/btn-favorite-on.png" ng-click="setFavoriteList()"></img>&nbsp&nbsp
+            <img style="height:30px; width: auto;" ng-src="img/btn-home.png" ng-click="backToindex()"></img>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>        
+        <div class="list card">
+            <div class="item item-divider">
+                學群與學系對照表
+            </div>
+            
+            <div class="item item-body" ng-repeat="group in groups">
+                    <h2>{{group.deptGroup}}</h2>
+                    <li class="list" ng-repeat="depart in group.deptList">
+                        <!-- <a  href="{{depart.deptURL}}">{{depart.deptName}}</a> -->
+                        <a ng-href="{{depart.deptURL}}"  class="item" onclick="window.open(this.href, '_self', 'location=yes'); return false;">{{depart.deptName}}</a>
+                    </li>
+                </div>
+			</div>
+        </div>
+    </ion-content>
+
+</ion-view>

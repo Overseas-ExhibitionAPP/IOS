@@ -1,0 +1,22 @@
+<ion-view view-title="我的最愛" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-buttons side="left">
+            <button class="button-clear button icon ion-chevron-left" ng-click="backtoLobby()">
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="fitem in fList" ng-class-even="'favorite-item'">
+                <div class="row" ng-click="getSchoolinfo('{{fitem.schoolnum}}')">
+                    <div class="col col-66 item-text-wrap favorite-title">
+                        {{fitem.schName}}
+                    </div>
+                    <div class="col col-33 item-text-wrap favorite-layout" >
+                        <i ng-repeat="layout in fitem.layoutList">{{layout.exhibName}}:{{layout.layoutNum}}<br/> </i>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

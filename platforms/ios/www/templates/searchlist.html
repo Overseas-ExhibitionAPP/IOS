@@ -1,0 +1,21 @@
+<ion-view view-title="查詢列表" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-buttons side="left">
+        <button class="button-clear button icon ion-chevron-left" ng-click="backtoLobby()">
+        </button>
+        </ion-nav-buttons>
+        <!-- 這是返回鍵，直接插入即可 -->
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list">
+            <div class="item item-divider">
+                搜尋結果
+            </div>
+			<div ng-repeat="item in searchList">
+				<i class="item" ng-click="getSchoolNum('{{item.schoolnum}}')">
+					{{item.schoolname}}
+				</i>
+			</div>			
+        </div>
+    </ion-content>
+</ion-view>

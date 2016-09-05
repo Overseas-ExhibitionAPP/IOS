@@ -1,0 +1,25 @@
+<ion-view view-title="最新消息" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-back-button><!-- 這是返回鍵，直接插入即可 -->
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <!--<div class="table-title">
+            <h3>Data Table</h3>
+        </div>-->
+        <table class="table-fill">
+            <thead>
+                <tr>
+                    <th class="news-date">日期</th>
+                    <th class="news-th-title">標題</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in News_Set" ng-click="getNews(item.title)">
+                    <td class="news-date">{{item.date}}</td>
+                    <td class="news-title">{{item.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ion-content>
+</ion-view>

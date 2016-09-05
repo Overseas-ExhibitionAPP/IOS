@@ -1,0 +1,28 @@
+<ion-view view-title="學校介紹" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-buttons side="left">
+        <button class="button-clear button icon ion-chevron-left" ng-click="backtoLobby()">
+        </button>
+        </ion-nav-buttons>
+        <!-- 這是返回鍵，直接插入即可 -->
+        <ion-nav-buttons side=" right">
+            <img style="height:30px; width: auto;" ng-src="img/btn-favorite-on.png" ng-click="setFavoriteList()"></img>&nbsp&nbsp
+            <img style="height:30px; width: auto;" ng-src="img/btn-home.png" ng-click="backToindex()"></img>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list card">
+            <div class="item item-divider">
+                學校特色
+            </div>
+            <div class="item item-body">
+				<div class="item"><h2>{{error}}<h2></div>
+				<div class="list" ng-repeat="list in cList1">
+				   <div class="item char-title"><h2>{{list.ctitle}}<h2></div>
+				   <div class="item"><h3>{{list.characteristic}}<h3></div>
+				</div>
+            </div>
+        </div>
+    </ion-content>
+    
+</ion-view>

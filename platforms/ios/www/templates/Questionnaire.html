@@ -1,0 +1,15 @@
+<ion-view view-title="行動問卷" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-back-button><!-- 這是返回鍵，直接插入即可 -->
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="page-back">
+		<div class = "col" ng-controller = "QuestionnaireSelect">
+			
+			{{info}}
+			<button class="button button-block button-positive" ui-sref="Q_show">
+				開始填寫
+			</button>
+		</div>
+    </ion-content>
+</ion-view>

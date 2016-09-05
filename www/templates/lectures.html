@@ -1,0 +1,33 @@
+﻿<ion-view view-title="講座時間" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-back-button>
+        </ion-nav-back-button><!-- 這是返回鍵，直接插入即可 -->
+    </ion-nav-bar>
+    <ion-content class="page-back">
+        <div class="card">
+            <div class="item item-divider">
+                <button ng-repeat="item in button_Set" class="button button-balanced area-item" ng-click="setLecture(item.area)">{{item.area}}</button>
+            </div>
+            <div class="item item-body">
+                <table class="table-fill">
+                    <thead>
+                        <tr>
+                            <th class="lec-th-date">日期</th>
+                            <th class="lect-th-time">時間</th>
+                            <th class="lec-th-unit">學校</th>
+                            <th class="lec-th-room">講座</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="litem in Lecture_Set">
+                            <td class="lec-date ">{{litem.lec_date}}</td>
+                            <td class="lec-time">{{litem.starttime}}<br/>|<br/>{{litem.endtime}}</td>
+                            <td class="lec-unit">{{litem.unit}}</td>
+                            <td class="lec-room">{{litem.lec_room}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

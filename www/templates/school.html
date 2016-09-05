@@ -1,0 +1,47 @@
+<ion-view view-title="學校查詢" animation="no-animation">
+    <ion-nav-bar class="bar bar-header bar-balanced">
+        <ion-nav-buttons side="left">
+        <button class="button-clear button icon ion-chevron-left" ng-click="backtoLobby()">
+        </button>
+        </ion-nav-buttons>
+        <!-- 這是返回鍵，直接插入即可 -->
+    </ion-nav-bar>
+    <ion-content scroll="false">
+        <div>
+            <h3>操作說明:</h3>
+            <p>
+                請勾選想要的地區與學群的條件，再按下搜尋鍵
+            </p>
+        </div>
+        <div class="school-btn">
+            <button class="button button-full button-calm" ng-click="Filtersubmit()">搜尋</button>
+        </div>
+        <ion-scroll zooming="true" direction="y"  style="height: 400px">
+            <div class="list card">
+                <div class="item item-divider">
+                    地區
+                </div>
+                <div class="item item-body">
+                    <ion-checkbox ng-repeat="SchoolareaName in school_fifter" 
+                            ng-model="schoolArea"
+                            ng-change="checkedOrNotAera(SchoolareaName, schoolArea, $index)">
+                    {{SchoolareaName}}
+                    </ion-checkbox>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item item-divider">
+                    學群
+                </div>
+                <div class="item item-body">
+                    <ion-checkbox ng-repeat="Group in studyGroup" 
+                            ng-model="staudyGroup_data"
+                            ng-change="checkedOrNotGroup(Group, staudyGroup_data, $index)">
+                    {{Group}}
+                    </ion-checkbox>	
+                </div>
+            </div>
+        </ion-scroll>
+    </ion-content>
+
+</ion-view>
