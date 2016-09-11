@@ -1,7 +1,5 @@
 angular.module('starter.controllers', ['starter.services', 'ngCordova'])
 .controller('LobbyCtrl', function($scope,$state, $stateParams,localStorage,$http) {
-    
-
     if(localStorage.get('accessToken') == null) {
         $state.go('login');
     }
@@ -145,6 +143,17 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
             $ionicLoading.hide();
         })
         .error(function (response) {
+            //無法正常取得集章簿
+            $ionicLoading.hide();
+            var alertPopup = $ionicPopup.alert({
+               title: '',
+               template: '網路似乎出錯囉！請稍後再試'
+            });
+            alertPopup.then(function(res) {
+               //導回lobby
+               $state.go('lobby');
+            });
+
         });
     $scope.scanBarcodeStamp = function () {
         //掃描學校QRcode，並回傳給後端資料庫
@@ -185,37 +194,61 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
                     
                 })
                 .error(function (response) {
-                
+                    //無法正常送出集章記錄並更新集章簿
+                    var alertPopup = $ionicPopup.alert({
+                       title: '',
+                       template: '網路似乎出錯囉！請稍後再進行集章'
+                    });
                 });
         }, function (error) {
-            console.warn("An error happened -> " + error);
+            //無法正常開啟掃瞄器
+            var alertPopup = $ionicPopup.alert({
+               title: '',
+               template: '無法正常啟動掃描器'
+            });
         });
     };
     $scope.scanBarcodeExchange = function() {
         //掃描兌換QRcode，並回傳給後端資料庫來判斷是否可兌換
         $cordovaBarcodeScanner.scan().then(function (result) {
             var tmpurl = result.text;
-            ThemeEvents_serve.exchangeCBox(UserId,tmpurl)
-                .success(function(response){
-                    //該頁面reload
-                    var alertPopup = $ionicPopup.alert({
-                        title: '',
-                        template: response.message
+            if(tmpurl == "/collectionbox/exchange") {
+                ThemeEvents_serve.exchangeCBox(UserId,tmpurl)
+                    .success(function(response){
+                        //該頁面reload
+                        var alertPopup = $ionicPopup.alert({
+                            title: '',
+                            template: response.message
+                        });
+                        var status = response.status;
+                        alertPopup.then(function(res) {
+                            if(status == "200") {
+                                $scope.CboxStatus = "已兌換";
+                                boxS = "Y";
+                            }
+                            
+                        });
+                    })
+                    .error(function (response) {
+                        //無法正常送出兌換的request
+                        var alertPopup = $ionicPopup.alert({
+                           title: '',
+                           template: '網路似乎出錯囉！請稍後再進行兌換'
+                        });
                     });
-                    var status = response.status;
-                    alertPopup.then(function(res) {
-                        if(status == "200") {
-                            $scope.CboxStatus = "已兌換";
-                            boxS = "Y";
-                        }
-                        
-                    });
-                })
-                .error(function (response) {
-                
+            } else {
+                var alertPopup = $ionicPopup.alert({
+                   title: '',
+                   template: '請掃描兌換專用的QRcode'
                 });
+            }
         }, function (error) {
-            console.warn("An error happened -> " + error);
+            //無法正常開啟掃瞄器
+            $ionicLoading.hide();
+            var alertPopup = $ionicPopup.alert({
+               title: '',
+               template: '無法正常啟動掃描器'
+            });
         });
     };
 })
@@ -674,7 +707,7 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
 .controller('SchoolunitCtrl', function($scope,$state,$ionicLoading,$timeout, $stateParams,localStorage,schoolSearchRes,$ionicPopup,FavoriteList_Func) {
     //若無accessToken則導引至登入頁
     if(localStorage.get('accessToken') == null) {
-        $state.go('login');
+      $state.go('login');
     }
     $ionicLoading.show({
       noBackdrop: true,
@@ -988,7 +1021,7 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
         $state.go('lobby');
     }
 })
-.controller('LoginCtrl', function($scope,$state, $stateParams,$cordovaOauth,$ionicPopup,localStorage,$http) {
+.controller('LoginCtrl', function($scope,$state, $stateParams,$cordovaOauth,$ionicPopup,localStorage,$http,Login_Func) {
     $scope.fbLogin = function () {
         $cordovaOauth.facebook('504278906430966',
                 ["email", "user_friends", "public_profile"])
@@ -999,25 +1032,30 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
                             params: 
                                 {
                                     access_token: localStorage.get('accessToken') , 
-                                    fields: "id,name", 
+                                    fields: "id,name,age_range,email", 
                                     format: "json" 
                                 }
                         }).then(function(result) {
+                            //server與client端各儲存一份userinfo
                             localStorage.setObject('fbUserinfo', result.data);
+                            Login_Func.updateUserInfo(result.data.id,result.data.name,
+                                    result.data.age_range, result.data.email)
+                                .success(function(res) {
+                                    $state.go('lobby');
+                                })
+                                .error(function(res){
+                                    $state.go('login');
+                                });
                         
                         }, function(error) {
-                            alert("Error: " + error);
+                            $state.go('login');
                         });
-                    $state.go('lobby');
                 }, function (error) {
-
+                    $state.go('login');
                 })
     }
 })
 .controller('OtherCtrl', function($scope,$state, $stateParams,localStorage) {
-    var tmp = localStorage.getObject('fbUserinfo');
-    $scope.test = "test" + tmp.id;
-    $scope.test2 = localStorage.get('accessToken');
-})
 
+})
 ;

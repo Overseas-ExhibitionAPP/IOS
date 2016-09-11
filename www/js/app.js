@@ -173,7 +173,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
               }
             }
         })
-        
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/lobby'); //這是頁面起始點

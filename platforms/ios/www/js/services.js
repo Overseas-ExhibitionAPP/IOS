@@ -1,6 +1,6 @@
 ﻿var services = angular.module('starter.services', []);
-var urlBase = 'http://163.22.17.174:8080/V1';
-var root_country = 'hk';
+var urlBase = 'http://api.overseas.ncnu.edu.tw:8080/V1';
+var root_country = 'hk';//控制取得資訊地區
 services.factory('localStorage', ['$window', function($window) {
   return {
     set: function(key, value) {
@@ -184,19 +184,33 @@ services.factory('FavoriteList_Func', function ($http) {
     var self = this;
     self.getFavoriteList = function(uid) {
         var FavoriteList = null;
-		var link = urlBase + '/school/'+ uid + '/favoritelist';
+		var link = urlBase + '/users/' + uid + '/favoritelist?country=' + root_country;
 		FavoriteList = $http.get(link);
         return FavoriteList;
     }
     self.updateFavoriteList = function(uid,schid,schName) {
         var output = null;
         var data = {
-            "userid": uid,
-            "country": root_country,
             "schoolnum": schid,
             "schoolname": schName
         }
-        var link = urlBase + '/school/favoritelist';
+        var link = urlBase + '/users/' + uid + '/favoritelist';
+        output = $http.put(link, data);
+        return output;
+    }
+    return self
+});
+services.factory('Login_Func', function ($http) {
+    var self = this;
+    self.updateUserInfo = function(uid,name,agerange,email) {
+        var output = null;
+        var data = {
+            "uid": uid,
+            "name": name,
+            "agerange": agerange,
+            "email": email
+        }
+        var link = urlBase + '/users';
         output = $http.put(link, data);
         return output;
     }

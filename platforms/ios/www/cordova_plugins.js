@@ -83,7 +83,6 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-compat": "1.0.0",
     "cordova-plugin-console": "1.0.3",
     "cordova-plugin-device": "1.1.2",
     "cordova-plugin-inappbrowser": "1.4.0",
@@ -92,7 +91,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-x-toast": "2.5.2",
     "ionic-plugin-keyboard": "2.2.0",
-    "phonegap-plugin-barcodescanner": "5.0.0"
+    "phonegap-plugin-barcodescanner": "5.0.0",
+    "cordova-plugin-compat": "1.0.0"
 };
 // BOTTOM OF METADATA
 });
