@@ -707,7 +707,7 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
 .controller('SchoolunitCtrl', function($scope,$state,$ionicLoading,$timeout, $stateParams,localStorage,schoolSearchRes,$ionicPopup,FavoriteList_Func) {
     //若無accessToken則導引至登入頁
     if(localStorage.get('accessToken') == null) {
-      $state.go('login');
+        $state.go('login');
     }
     $ionicLoading.show({
       noBackdrop: true,
