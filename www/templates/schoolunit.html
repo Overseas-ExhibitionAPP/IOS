@@ -20,7 +20,7 @@
                     <h2>{{group.deptGroup}}</h2>
                     <li class="list" ng-repeat="depart in group.deptList">
                         <!-- <a  href="{{depart.deptURL}}">{{depart.deptName}}</a> -->
-                        <a ng-href="{{depart.deptURL}}"  class="item" onclick="window.open(this.href, '_self', 'location=yes'); return false;">{{depart.deptName}}</a>
+                        <a ng-href="{{depart.deptURL}}"  class="item" onclick="window.open(this.href, '_blank', 'location=yes'); return false;">{{depart.deptName}}</a>
                     </li>
                 </div>
 			</div>
