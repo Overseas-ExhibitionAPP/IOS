@@ -16,6 +16,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           // org.apache.cordova.statusbar required
           StatusBar.styleDefault();
         }
+        ionic.Platform.fullScreen();
     });
     $ionicPlatform.registerBackButtonAction(function (e) {
         if ($rootScope.backButtonPressedOnceToExit) {

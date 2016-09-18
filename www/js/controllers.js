@@ -2,7 +2,9 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
 .controller('LobbyCtrl', function($scope,$state, $stateParams,localStorage,$http) {
     if(localStorage.get('accessToken') == null) {
         $state.go('login');
+            
     }
+    
 })
 .controller('StallsCtrl', function($scope,$state,$ionicLoading,$timeout, $stateParams,$http,STALLS) {
     $ionicLoading.show({
