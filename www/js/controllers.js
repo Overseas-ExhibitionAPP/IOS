@@ -256,6 +256,8 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
 })
 .controller('TrafficCtrl', function($scope,$state,$ionicLoading,$timeout, $stateParams, $http,MAP) {
     var mapList;
+    var startTime_s;
+    var endTime_s;
     $ionicLoading.show({
       noBackdrop: true,
       template: '<p class="item-icon-left">Loading...<ion-spinner icon="lines"/></p>'
@@ -264,9 +266,12 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
 		.success(function(res){
 			$scope.Pos_Set = res.traffic_list;
 			mapList = res.traffic_list;
+            startTime_s = mapList[0].starttime.split("/");
+            endTime_s = mapList[0].endtime.split("/");
 			$scope.name = "地點；" + mapList[0].name;
 			$scope.address = "地址：" + mapList[0].address;
-			$scope.time = "時間：" + mapList[0].starttime + "~" + mapList[0].endtime;
+            $scope.time = "時間：" + startTime_s + "~" + endTime_s;
+			//$scope.time = "時間：" + mapList[0].starttime + "~" + mapList[0].endtime;
 			//預設地圖為參展資料之第一筆地區資料
 			var posT = MAP.searchPos(mapList[0].name, mapList);
             $scope.position = posT.position;
@@ -278,10 +283,13 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
     //偵測到地區按鈕被點擊，即reload該地區圖資
     $scope.setPos=function(posName) {
         var posT = MAP.searchPos(posName, mapList);
+        startTime_s = posT.starttime.split("/");
+        endTime_s = posT.endtime.split("/");
         $scope.position = posT.position;
 		$scope.name = "地點；" + posT.name;
 		$scope.address = "地址：" + posT.address;
-		$scope.time = "時間：" + posT.starttime + "~" + posT.endtime;
+		//$scope.time = "時間：" + posT.starttime + "~" + posT.endtime;
+        $scope.time = "時間：" + startTime_s + "~" + endTime_s;
 
     };
 })
