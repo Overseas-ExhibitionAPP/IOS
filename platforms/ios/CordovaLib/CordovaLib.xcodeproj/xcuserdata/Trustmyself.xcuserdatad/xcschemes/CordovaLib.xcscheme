@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "Study@Taiwan.app"
-               BlueprintName = "Study@Taiwan"
-               ReferencedContainer = "container:Study@Taiwan.xcodeproj">
+               BlueprintIdentifier = "D2AAC07D0554694100DB518D"
+               BuildableName = "libCordova.a"
+               BlueprintName = "CordovaLib"
+               ReferencedContainer = "container:CordovaLib.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Study@Taiwan.app"
-            BlueprintName = "Study@Taiwan"
-            ReferencedContainer = "container:Study@Taiwan.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Study@Taiwan.app"
-            BlueprintName = "Study@Taiwan"
-            ReferencedContainer = "container:Study@Taiwan.xcodeproj">
+            BlueprintIdentifier = "D2AAC07D0554694100DB518D"
+            BuildableName = "libCordova.a"
+            BlueprintName = "CordovaLib"
+            ReferencedContainer = "container:CordovaLib.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,23 +60,21 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Study@Taiwan.app"
-            BlueprintName = "Study@Taiwan"
-            ReferencedContainer = "container:Study@Taiwan.xcodeproj">
+            BlueprintIdentifier = "D2AAC07D0554694100DB518D"
+            BuildableName = "libCordova.a"
+            BlueprintName = "CordovaLib"
+            ReferencedContainer = "container:CordovaLib.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "Study@Taiwan"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
