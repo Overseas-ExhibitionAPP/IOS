@@ -270,7 +270,8 @@ angular.module('starter.controllers', ['starter.services', 'ngCordova'])
             endTime_s = mapList[0].endtime.split("/");
 			$scope.name = "地點；" + mapList[0].name;
 			$scope.address = "地址：" + mapList[0].address;
-            $scope.time = "時間：" + startTime_s + "~" + endTime_s;
+            $scope.time = "時間：" + startTime_s[0] + '.' + startTime_s[1] + '.' + startTime_s[2]
+                + "~" + endTime_s[0] + '.' + endTime_s[1] + '.' + endTime_s[2];
 			//$scope.time = "時間：" + mapList[0].starttime + "~" + mapList[0].endtime;
 			//預設地圖為參展資料之第一筆地區資料
 			var posT = MAP.searchPos(mapList[0].name, mapList);
