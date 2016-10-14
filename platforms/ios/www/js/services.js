@@ -1,6 +1,6 @@
 ﻿var services = angular.module('starter.services', []);
 var urlBase = 'http://api.overseas.ncnu.edu.tw:8080/V1';
-var root_country = 'hk';//控制取得資訊地區
+var root_country = 'mo';//控制取得資訊地區
 services.factory('localStorage', ['$window', function($window) {
   return {
     set: function(key, value) {
